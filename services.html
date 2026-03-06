@@ -290,6 +290,24 @@
                 padding: 25px;
             }
         }
+          /* Client logo text fallbacks */
+    .client-logo-text {
+        font-weight: 700;
+        color: var(--jzd-navy);
+        font-size: 18px;
+        padding: 20px;
+        text-align: center;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        background: white;
+    }
+    .dgm-brand-wrapper {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px 0;
+    }
     </style>
 </head>
 
@@ -302,12 +320,12 @@
     <!-- End magic cursor -->
 
     <!-- preloader -->
-    <div id="preloader">
+    <!-- <div id="preloader">
         <div class="preloader">
             <span></span>
             <span></span>
         </div>
-    </div>
+    </div> -->
     <!-- preloader end  -->
 
     <!-- back to top start -->
@@ -814,36 +832,17 @@
                 </div>
                 <!-- team experience note end -->
 
-                <!-- brand area start -->
-                <div class="dgm-brand-area fix pt-40 pb-60">
-                    <div class="dgm-brand-wrapper">
-                        <div class="swiper-container dgm-brand-active">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="dgm-brand-item">
-                                        <img src="images/mastercard-logo.png" alt="Mastercard" onerror="this.src='images/brand-1.png'">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="dgm-brand-item">
-                                        <img src="images/bmw-logo.png" alt="BMW" onerror="this.src='images/brand-2.png'">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="dgm-brand-item">
-                                        <img src="images/kuehne-nagel-logo.png" alt="Kuehne + Nagel" onerror="this.src='images/brand-3.png'">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="dgm-brand-item">
-                                        <img src="images/easy-way-crane-logo.avif" alt="Easy Way Crane" onerror="this.src='images/brand-4.png'">
-                                    </div>
-                                </div>
-                            </div>
+               <!-- brand area start - TEXT ONLY -->
+                <div class="dgm-brand-area fix pt-80">
+                    <div class="container container-1230">
+                        <div class="dgm-brand-wrapper">
+                            <div class="client-logo-text">MASTERCARD</div>
+                            <div class="client-logo-text">BMW</div>
+                            <div class="client-logo-text">KUEHNE + NAGEL</div>
+                            <div class="client-logo-text">EASY WAY CRANE</div>
                         </div>
                     </div>
                 </div>
-                <!-- brand area end -->
 
                 <!-- cta area start -->
                 <div class="cta-section">
@@ -954,8 +953,8 @@
                                     <div class="tp-copyright-2-right">
                                         <div class="tp-copyright-2-menu text-md-end text-center">
                                             <ul>
-                                                <li><a href="#">Privacy Policy</a></li>
-                                                <li><a href="#">Terms & Conditions</a></li>
+                                               <li><a href="/privacy.html">Privacy Policy</a></li>
+                                                <li><a href="/terms.html">Terms & Conditions</a></li>
                                             </ul>
                                         </div>
                                     </div>

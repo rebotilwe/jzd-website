@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Place favicon.ico in the root directory -->
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="images/jzd-logo.jpg">
 
     <!-- CSS here -->
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -391,6 +391,83 @@
             transform: translateY(-3px);
         }
         
+        /* Success Message Popup */
+        .success-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        
+        .success-popup.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .success-popup-content {
+            background: white;
+            padding: 50px;
+            border-radius: 30px;
+            text-align: center;
+            max-width: 400px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            transform: scale(0.8);
+            transition: all 0.3s;
+        }
+        
+        .success-popup.show .success-popup-content {
+            transform: scale(1);
+        }
+        
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--jzd-cyan);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 40px;
+        }
+        
+        .success-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--jzd-navy);
+            margin-bottom: 10px;
+        }
+        
+        .success-message {
+            color: #666;
+            margin-bottom: 25px;
+        }
+        
+        .success-close-btn {
+            background: var(--jzd-cyan);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .success-close-btn:hover {
+            background: var(--jzd-navy);
+        }
+        
         /* Responsive */
         @media (max-width: 767px) {
             .tp-header-logo img {
@@ -412,6 +489,10 @@
             .cta-title {
                 font-size: 32px;
             }
+            .success-popup-content {
+                margin: 20px;
+                padding: 30px;
+            }
         }
     </style>
 </head>
@@ -424,14 +505,13 @@
     </div>
     <!-- End magic cursor -->
 
-    <!-- preloader -->
-    <div id="preloader">
+    <!-- preloader - commented out -->
+    <!-- <div id="preloader">
         <div class="preloader">
             <span></span>
             <span></span>
         </div>
-    </div>
-    <!-- preloader end  -->
+    </div> -->
 
     <!-- back to top start -->
     <div class="back-to-top-wrapper">
@@ -443,14 +523,23 @@
     </div>
     <!-- back to top end -->
 
-    <!-- tp-offcanvus-area-start -->
+    <!-- Success Message Popup -->
+    <div class="success-popup" id="successPopup">
+        <div class="success-popup-content">
+            <div class="success-icon">✓</div>
+            <h3 class="success-title">Message Sent!</h3>
+            <p class="success-message">Thank you for contacting us. We'll get back to you within 24 hours.</p>
+            <button class="success-close-btn" onclick="closeSuccessPopup()">Close</button>
+        </div>
+    </div>
+
+    <!-- tp-offcanvus-area-start - SIMPLIFIED -->
     <div class="tp-offcanvas-area">
         <div class="tp-offcanvas-wrapper">
             <div class="tp-offcanvas-top d-flex align-items-center justify-content-between">
                 <div class="tp-offcanvas-logo">
                     <a href="index.html">
-                        <img class="logo-1" data-width="120" src="images/jzd-logo.jpg" alt="JZ&D Digital Marketing">
-                        <img class="logo-2" data-width="120" src="images/jzd-logo-white.png" alt="JZ&D Digital Marketing">
+                        <img data-width="120" src="images/jzd-logo.jpg" alt="JZ&D Digital Marketing">
                     </a>
                 </div>
                 <div class="tp-offcanvas-close">
@@ -467,79 +556,20 @@
                     <h3 class="tp-offcanvas-title">Hello There!</h3>
                     <p>Welcome to JZ&D Digital Marketing – Your trusted partner for corporate gifting and digital solutions.</p>
                 </div>
-                <div class="tp-offcanvas-menu d-xl-none">
-                    <nav></nav>
-                </div>
-                <div class="tp-offcanvas-gallery d-none d-xl-block">
-                    <div class="row gx-2">
-                        <div class="col-md-3 col-3">
-                            <div class="tp-offcanvas-gallery-img fix">
-                                <a class="popup-image" href="assets/img/offcanvas/offcanvas-1.jpg"><img src="images/offcanvas-1.jpg" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-3">
-                            <div class="tp-offcanvas-gallery-img fix">
-                                <a class="popup-image" href="assets/img/offcanvas/offcanvas-2.jpg"><img src="images/offcanvas-2.jpg" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-3">
-                            <div class="tp-offcanvas-gallery-img fix">
-                                <a class="popup-image" href="assets/img/offcanvas/offcanvas-3.jpg"><img src="images/offcanvas-3.jpg" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-3">
-                            <div class="tp-offcanvas-gallery-img fix">
-                                <a class="popup-image" href="assets/img/offcanvas/offcanvas-4.jpg"><img src="images/offcanvas-4.jpg" alt=""></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="tp-offcanvas-contact">
                     <h3 class="tp-offcanvas-title sm">Contact Information</h3>
                     <ul>
-                        <li><a href="tel:0764751443">Jessie Naidoo (Director): 076 475 1443</a></li>
-                        <li><a href="tel:0680519853">Humza (Operations): 068 051 9853</a></li>
+                        <li><a href="tel:0764751443">Jessie Naidoo: 076 475 1443</a></li>
+                        <li><a href="tel:0680519853">Humza: 068 051 9853</a></li>
                         <li><a href="mailto:jzanddmarketing@gmail.com">jzanddmarketing@gmail.com</a></li>
-                        <li><a href="mailto:jessien1965@gmail.com">jessien1965@gmail.com</a></li>
                     </ul>
                 </div>
                 <div class="tp-offcanvas-social">
                     <h3 class="tp-offcanvas-title sm">Follow Us</h3>
                     <ul>
-                        <li>
-                            <a href="#">
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11.25 1.5H4.75C2.95507 1.5 1.5 2.95507 1.5 4.75V11.25C1.5 13.0449 2.95507 14.5 4.75 14.5H11.25C13.0449 14.5 14.5 13.0449 14.5 11.25V4.75C14.5 2.95507 13.0449 1.5 11.25 1.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    <path d="M10.6016 7.5907C10.6818 8.13166 10.5894 8.68414 10.3375 9.16955C10.0856 9.65497 9.68711 10.0486 9.19862 10.2945C8.71014 10.5404 8.15656 10.6259 7.61663 10.5391C7.0767 10.4522 6.57791 10.1972 6.19121 9.81055C5.80451 9.42385 5.54959 8.92506 5.46271 8.38513C5.37583 7.8452 5.46141 7.29163 5.70728 6.80314C5.95315 6.31465 6.34679 5.91613 6.83221 5.66425C7.31763 5.41238 7.87011 5.31998 8.41107 5.4002C8.96287 5.48202 9.47372 5.73915 9.86817 6.1336C10.2626 6.52804 10.5197 7.0389 10.6016 7.5907Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    <path d="M11.5742 4.42578H11.5842" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M2.50589 12.7494C4.57662 16.336 9.16278 17.5648 12.7494 15.4941C14.2113 14.65 15.2816 13.388 15.8962 11.9461C16.7895 9.85066 16.7208 7.37526 15.4941 5.25063C14.2674 3.12599 12.1581 1.82872 9.89669 1.55462C8.34063 1.366 6.71259 1.66183 5.25063 2.50589C1.66403 4.57662 0.435172 9.16278 2.50589 12.7494Z" stroke="currentColor" stroke-width="1.5"></path>
-                                    <path d="M12.7127 15.4292C12.7127 15.4292 12.0086 10.4867 10.5011 7.87559C8.99362 5.26451 5.28935 2.57155 5.28935 2.57155M5.68449 15.6124C6.79553 12.2606 12.34 8.54524 16.3975 9.43537M12.311 2.4082C11.1953 5.72344 5.75732 9.38453 1.71875 8.58915" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
-                                </svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <svg width="18" height="11" viewBox="0 0 18 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 5.5715H6.33342C7.62867 5.5715 8.61917 6.56199 8.61917 7.85725C8.61917 9.15251 7.62867 10.143 6.33342 10.143H1.76192C1.30477 10.143 1 9.83823 1 9.38108V1.76192C1 1.30477 1.30477 1 1.76192 1H5.5715C6.86676 1 7.85725 1.99049 7.85725 3.28575C7.85725 4.58101 6.86676 5.5715 5.5715 5.5715H1Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"></path>
-                                    <path d="M10.9062 7.09454H17.0016C17.0016 5.41832 15.6301 4.04688 13.9539 4.04688C12.2777 4.04688 10.9062 5.41832 10.9062 7.09454ZM10.9062 7.09454C10.9062 8.77076 12.2777 10.1422 13.9539 10.1422H15.2492" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    <path d="M16.1125 1.44434H11.668" stroke="currentColor" stroke-width="1.2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
-                                </svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12.75 13H5.25C3 13 1.5 11.5 1.5 9.25V4.75C1.5 2.5 3 1 5.25 1H12.75C15 1 16.5 2.5 16.5 4.75V9.25C16.5 11.5 15 13 12.75 13Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    <path d="M8.70676 5.14837L10.8006 6.40465C11.5543 6.90716 11.5543 7.66093 10.8006 8.16344L8.70676 9.41972C7.86923 9.92224 7.19922 9.50348 7.19922 8.5822V6.06964C7.19922 4.98086 7.86923 4.64585 8.70676 5.14837Z" fill="currentColor"></path>
-                                </svg>
-                            </a>
-                        </li>
+                        <li><a href="#">f</a></li>
+                        <li><a href="#">t</a></li>
+                        <li><a href="#">in</a></li>
                     </ul>
                 </div>
             </div>
@@ -563,60 +593,38 @@
                             <div class="tp-header-menu tp-header-dropdown dropdown-white-bg d-none d-xl-flex">
                                 <nav class="tp-mobile-menu-active">
                                     <ul>
-                                        <li class="">
-                                            <a href="index.html">Home</a>
-                                        </li>
+                                        <li><a href="index.html">Home</a></li>
                                         <li class="has-dropdown">
                                             <a href="services.html">Services</a>
                                             <ul class="tp-submenu submenu">
                                                 <li><a href="services.html#corporate-gifting">Corporate Gifting</a></li>
-                                                <li><a href="services.html#branded-merchandise">Custom Branded Merchandise</a></li>
-                                                <li><a href="services.html#warehousing">Warehousing & Distribution</a></li>
+                                                <li><a href="services.html#branded-merchandise">Custom Merchandise</a></li>
+                                                <li><a href="services.html#warehousing">Warehousing</a></li>
                                                 <li><a href="services.html#digital-marketing">Digital Marketing</a></li>
                                             </ul>
                                         </li>
                                         <li class="has-dropdown">
                                             <a href="products.html">Products</a>
                                             <ul class="tp-submenu submenu">
-                                                <li><a href="products.html#gift-hampers">Corporate Gift Hampers</a></li>
-                                                <li><a href="products.html#promotional">Branded Promotional Products</a></li>
-                                                <li><a href="products.html#appreciation">Employee Appreciation Gifts</a></li>
-                                                <li><a href="products.html#conference">Conference & Events Gifts</a></li>
-                                                <li><a href="products.html#holiday">Holiday Corporate Gifts</a></li>
-                                                <li><a href="products.html#executive">Executive Gifts</a></li>
+                                                <li><a href="products.html#gift-hampers">Gift Hampers</a></li>
+                                                <li><a href="products.html#promotional">Promotional</a></li>
+                                                <li><a href="products.html#appreciation">Appreciation</a></li>
+                                                <li><a href="products.html#executive">Executive</a></li>
                                             </ul>
                                         </li>
-                                        <li class="">
-                                            <a href="about.html">About Us</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="team.html">Our Team</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="contact.html">Contact</a>
-                                        </li>
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li><a href="team.html">Our Team</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
                                     </ul>
                                 </nav>
                             </div>
                             <div class="tp-header-btn d-none d-md-flex">
                                 <a class="tp-btn-yellow-green green-solid" href="contact.html">
-                                    <i>
-                                        <svg width="17" height="14" viewBox="0 0 17 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M16 2.5C16 1.675 15.325 1 14.5 1H2.5C1.675 1 1 1.675 1 2.5M16 2.5V11.5C16 12.325 15.325 13 14.5 13H2.5C1.675 13 1 12.325 1 11.5V2.5M16 2.5L8.5 7.75L1 2.5" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                        </svg>
-                                    </i>
-                                    <span>
-                                        <span class="text-1">Get a Quote</span>
-                                        <span class="text-2">Get a Quote</span>
-                                    </span>
+                                    <span><span class="text-1">Get a Quote</span><span class="text-2">Get a Quote</span></span>
                                 </a>
                             </div>
                             <div class="tp-header-bar ml-15 d-xl-none">
-                                <button class="tp-offcanvas-open-btn">
-                                    <i></i>
-                                    <i></i>
-                                    <i></i>
-                                </button>
+                                <button class="tp-offcanvas-open-btn"><i></i><i></i><i></i></button>
                             </div>
                         </div>
                     </div>
@@ -753,36 +761,36 @@
                                             <p class="form-subtitle">We'll get back to you within 24 hours</p>
                                         </div>
                                     </div>
-                                    <form id="contactForm" action="#" method="POST">
+                                    <form id="contactForm" action="https://formspree.io/f/mqeykenv" method="POST">
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="form-label">Full Name *</label>
-                                                    <input type="text" class="form-control" placeholder="Your name" required>
+                                                    <input type="text" name="name" class="form-control" placeholder="Your name" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="form-label">Company Name</label>
-                                                    <input type="text" class="form-control" placeholder="Your company">
+                                                    <input type="text" name="company" class="form-control" placeholder="Your company">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="form-label">Email Address *</label>
-                                                    <input type="email" class="form-control" placeholder="your@email.com" required>
+                                                    <input type="email" name="email" class="form-control" placeholder="your@email.com" required>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="form-label">Phone Number</label>
-                                                    <input type="tel" class="form-control" placeholder="Your phone number">
+                                                    <input type="tel" name="phone" class="form-control" placeholder="Your phone number">
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="form-label">Service Interested In</label>
-                                                    <select class="form-control">
+                                                    <select name="service" class="form-control">
                                                         <option value="">Select a service</option>
                                                         <option value="corporate-gifting">Corporate Gifting</option>
                                                         <option value="branded-merchandise">Custom Branded Merchandise</option>
@@ -795,7 +803,7 @@
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="form-label">Message *</label>
-                                                    <textarea class="form-control" placeholder="Tell us about your requirements..." required></textarea>
+                                                    <textarea name="message" class="form-control" placeholder="Tell us about your requirements..." required></textarea>
                                                 </div>
                                             </div>
                                             <div class="col-md-12 text-center">
@@ -930,33 +938,11 @@
                                             <p>Complete turnkey solutions for corporate gifting, warehousing, and digital marketing. Trusted by industry leaders worldwide.</p>
                                         </div>
                                         <div class="dgm-footer-widget-social">
-                                            <a href="#">
-                                                <span>
-                                                    <svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M8 0H5.81818C4.85376 0 3.92883 0.383116 3.24688 1.06507C2.56493 1.74702 2.18182 2.67194 2.18182 3.63636V5.81818H0V8.72727H2.18182V14.5455H5.09091V8.72727H7.27273L8 5.81818H5.09091V3.63636C5.09091 3.44348 5.16753 3.25849 5.30392 3.1221C5.44031 2.98571 5.6253 2.90909 5.81818 2.90909H8V0Z" fill="currentcolor"></path>
-                                                    </svg>
-                                                </span>
-                                            </a>
-                                            <a href="#">
-                                                <span>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                                        <path d="M9.4507 0.5H11.2908L7.27076 5.15949L12 11.5H8.29704L5.39675 7.65451L2.07815 11.5H0.236963L4.53678 6.51615L0 0.5H3.79697L6.41858 4.01492L9.4507 0.5ZM8.8049 10.3831H9.8245L3.24294 1.55826H2.1488L8.8049 10.3831Z" fill="currentcolor"></path>
-                                                    </svg>
-                                                </span>
-                                            </a>
-                                            <a href="#">
-                                                <span>
-                                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M9.8001 4.2002C10.914 4.2002 11.9823 4.64269 12.7699 5.43035C13.5576 6.218 14.0001 7.28629 14.0001 8.4002V13.3002H11.2001V8.4002C11.2001 8.02889 11.0526 7.6728 10.79 7.41025C10.5275 7.1477 10.1714 7.0002 9.8001 7.0002C9.42879 7.0002 9.0727 7.1477 8.81015 7.41025C8.5476 7.6728 8.4001 8.02889 8.4001 8.4002V13.3002H5.6001V8.4002C5.6001 7.28629 6.0426 6.218 6.83025 5.43035C7.6179 4.64269 8.68619 4.2002 9.8001 4.2002Z" fill="currentcolor"></path>
-                                                        <path d="M2.8 4.89941H0V13.2994H2.8V4.89941Z" fill="currentcolor"></path>
-                                                        <path d="M1.4 2.8C2.1732 2.8 2.8 2.1732 2.8 1.4C2.8 0.626801 2.1732 0 1.4 0C0.626801 0 0 0.626801 0 1.4C0 2.1732 0.626801 2.8 1.4 2.8Z" fill="currentcolor"></path>
-                                                    </svg>
-                                                </span>
-                                            </a>
+                                            <a href="#">f</a> <a href="#">t</a> <a href="#">in</a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-2 col-lg-2  col-md-3 mb-40">
+                                <div class="col-xl-2 col-lg-2 col-md-3 mb-40">
                                     <div class="dgm-footer-widget dgm-footer-col-2 tp_fade_anim" data-delay=".4">
                                         <h4 class="dgm-footer-widget-title">Quick Links</h4>
                                         <div class="dgm-footer-widget-menu">
@@ -987,10 +973,9 @@
                                     <div class="dgm-footer-widget dgm-footer-col-4 z-index-1 tp_fade_anim" data-delay=".6">
                                         <h4 class="dgm-footer-widget-title">Contact Us</h4>
                                         <div class="dgm-footer-widget-paragraph color-style mb-20">
-                                            <p class="mb-2"><strong>Jessie Naidoo (Director):</strong> 076 475 1443</p>
-                                            <p class="mb-2"><strong>Humza (Operations Manager):</strong> 068 051 9853</p>
+                                            <p class="mb-2"><strong>Jessie Naidoo:</strong> 076 475 1443</p>
+                                            <p class="mb-2"><strong>Humza:</strong> 068 051 9853</p>
                                             <p class="mb-2"><strong>Email:</strong> jzanddmarketing@gmail.com</p>
-                                            <p class="mb-2"><strong>Email:</strong> jessien1965@gmail.com</p>
                                         </div>
                                     </div>
                                 </div>
@@ -1005,15 +990,15 @@
                             <div class="row align-items-center">
                                 <div class="col-xl-6 col-lg-6 col-md-6">
                                     <div class="tp-copyright-2-left text-center text-md-start z-index-1">
-                                        <p>© 2026 <a href="#">JZ&D Digital Marketing (PTY) LTD</a>. All Rights Reserved.</p>
+                                        <p>© 2026 JZ&D Digital Marketing (PTY) LTD. All Rights Reserved.</p>
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6">
                                     <div class="tp-copyright-2-right">
                                         <div class="tp-copyright-2-menu text-md-end text-center">
                                             <ul>
-                                                <li><a href="#">Privacy Policy</a></li>
-                                                <li><a href="#">Terms & Conditions</a></li>
+                                                 <li><a href="/privacy.html">Privacy Policy</a></li>
+                                                <li><a href="/terms.html">Terms & Conditions</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -1028,49 +1013,39 @@
         </div>
     </div>
 
-    <!-- JS here -->
+    <!-- Formspree Success Handling -->
+    <script>
+        function showSuccessPopup() {
+            document.getElementById('successPopup').classList.add('show');
+        }
+        
+        function closeSuccessPopup() {
+            document.getElementById('successPopup').classList.remove('show');
+        }
+        
+        // Check URL for Formspree success parameter
+        window.addEventListener('load', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('success') && urlParams.get('success') === 'true') {
+                showSuccessPopup();
+                // Remove the success parameter from URL without refreshing
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+        });
+        
+        // Handle form submission - Formspree will redirect with ?success=true
+        document.getElementById('contactForm').addEventListener('submit', function() {
+            // The form will submit to Formspree normally
+            // Formspree will redirect back with ?success=true
+        });
+    </script>
+
+    <!-- Simplified JS - Only essential files -->
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap-bundle.js"></script>
     <script src="js/swiper-bundle.js"></script>
-    <script src="js/plugin.js"></script>
-    <script src="js/three.js"></script>
-    <script src="js/slick.js"></script>
-    <script src="js/scroll-magic.js"></script>
-    <script src="js/hover-effect.umd.js"></script>
-    <script src="js/magnific-popup.js"></script>
-    <script src="js/parallax-slider.js"></script>
-    <script src="js/nice-select.js"></script>
-    <script src="js/purecounter.js"></script>
-    <script src="js/isotope-pkgd.js"></script>
-    <script src="js/imagesloaded-pkgd.js"></script>
-    <script src="js/ajax-form.js"></script>
-    <script src="js/Observer.min.js"></script>
-    <script src="js/splitting.min.js"></script>
-    <script src="js/webgl.js"></script>
-    <script src="js/parallax-scroll.js"></script>
-    <script src="js/atropos.js"></script>
-    <script src="js/slider-active.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/tp-cursor.js"></script>
-    <script src="js/portfolio-slider-1.js"></script>
-    <script type="module" src="js/distortion-img.js"></script>
-    <script type="module" src="js/index_1.js"></script>
-    <script type="module" src="js/index.js"></script>
-
-    <!-- Initialize purecounter -->
-    <script>
-        new PureCounter();
-        
-        // Simple form handling (prevents actual submission for demo)
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! We will contact you within 24 hours.');
-            this.reset();
-        });
-    </script>
 
 </body>
 
 </html>
-
-
