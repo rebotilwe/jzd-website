@@ -68,6 +68,25 @@
     .dgm-process-number span.h4 {
         color: white !important;
     }
+       
+    /* Client logo text fallbacks */
+    .client-logo-text {
+        font-weight: 700;
+        color: var(--jzd-navy);
+        font-size: 18px;
+        padding: 20px;
+        text-align: center;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        background: white;
+    }
+    .dgm-brand-wrapper {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px 0;
+    }
 </style>
 </head>
 
@@ -803,52 +822,27 @@
                     </div>
                 </div>
                 <!-- target audience area end -->
-
-                <!-- brand area start -->
+<!-- brand area start - TEXT ONLY -->
                 <div class="dgm-brand-area fix pt-80">
-                    <div class="dgm-brand-wrapper">
-                        <div class="swiper-container dgm-brand-active">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="dgm-brand-item">
-                                        <img src="images/mastercard-logo.png" alt="Mastercard" onerror="this.src='images/brand-1.png'">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="dgm-brand-item">
-                                        <img src="images/bmw-logo.png" alt="BMW" onerror="this.src='images/brand-2.png'">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="dgm-brand-item">
-                                        <img src="images/kuehne-nagel-logo.png" alt="Kuehne + Nagel" onerror="this.src='images/brand-3.png'">
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="dgm-brand-item">
-                                        <img src="images/easy-way-crane-logo.png" alt="Easy Way Crane" onerror="this.src='images/brand-4.png'">
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="container container-1230">
+                        <div class="dgm-brand-wrapper">
+                            <div class="client-logo-text">MASTERCARD</div>
+                            <div class="client-logo-text">BMW</div>
+                            <div class="client-logo-text">KUEHNE + NAGEL</div>
+                            <div class="client-logo-text">EASY WAY CRANE</div>
                         </div>
                     </div>
                 </div>
                 <!-- brand area end -->
-
-                <!-- team area start -->
+ <!-- team area start - AVATAR VERSION -->
                 <div id="team" class="dgm-team-area pt-120 pb-80">
                     <div class="container container-1330">
                         <div class="dgm-team-top-wrap mb-60">
                             <div class="row align-items-end">
                                 <div class="col-md-8">
-                                    <div class="dgm-team-title-box z-index-">
+                                    <div class="dgm-team-title-box">
                                         <span class="tp-section-subtitle subtitle-black mb-15 tp_fade_anim" data-delay=".3">Our Leadership</span>
-                                        <h4 class="tp-section-title-grotesk mb-0 tp_fade_anim" data-delay=".5">
-                                            Meet the
-                                            <span class="p-relative">
-                                                team
-                                            </span>
-                                        </h4>
+                                        <h4 class="tp-section-title-grotesk mb-0 tp_fade_anim" data-delay=".5">Meet the team</h4>
                                     </div>
                                 </div>
                             </div>
@@ -857,91 +851,33 @@
                             <div class="row">
                                 <!-- Jessie Naidoo - Director -->
                                 <div class="col-xl-4 col-lg-4 col-md-6">
-                                  <div class="dgm-team-item mb-40 tp_fade_anim jessie-highlight" data-delay=".3">
-                                        <div class="dgm-team-thumb tp--hover-item p-relative">
-                                            <a href="#">
-                                                <div class="tp--hover-img">
-                                                    <img src="images/jessie-naidoo.jpg" alt="Jessie Naidoo" onerror="this.src='images/team-1.jpg'">
-                                                </div>
-                                            </a>
+                                    <div class="dgm-team-item mb-40 tp_fade_anim jessie-highlight" data-delay=".3">
+                                        <div class="team-avatar-placeholder">
+                                            <div class="avatar-initials">JN</div>
                                         </div>
                                         <div class="dgm-team-content">
-                                            <h4 class="dgm-team-title-sm"><a class="tp-line-black" href="#">Jessie Naidoo</a></h4>
+                                            <h4 class="dgm-team-title-sm">Jessie Naidoo</h4>
                                             <span class="text-primary fw-bold">Director</span>
                                             <p class="team-contact mt-2">📞 076 475 1443</p>
-                                            <p class="small">Founded JZ&D in 2020 with extensive knowledge in corporate alignment and business affairs. Dedicated to commitments and obligatory affairs with major industries.</p>
-                                            <div class="dgm-team-social">
-                                                <a href="#">
-                                                    <span>
-                                                        <svg width="7" height="13" viewBox="0 0 7 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M7 0H5.09091C4.24704 0 3.43773 0.335226 2.84102 0.931933C2.24432 1.52864 1.90909 2.33795 1.90909 3.18182V5.09091H0V7.63636H1.90909V12.7273H4.45455V7.63636H6.36364L7 5.09091H4.45455V3.18182C4.45455 3.01304 4.52159 2.85118 4.64093 2.73184C4.76027 2.6125 4.92213 2.54545 5.09091 2.54545H7V0Z" fill="currentcolor"></path>
-                                                        </svg>
-                                                    </span>
-                                                </a>
-                                                <a href="#">
-                                                    <span>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                                            <path d="M9.4507 0.5H11.2908L7.27076 5.15949L12 11.5H8.29704L5.39675 7.65451L2.07815 11.5H0.236963L4.53678 6.51615L0 0.5H3.79697L6.41858 4.01492L9.4507 0.5ZM8.8049 10.3831H9.8245L3.24294 1.55826H2.1488L8.8049 10.3831Z" fill="currentcolor"></path>
-                                                        </svg>
-                                                    </span>
-                                                </a>
-                                                <a href="#">
-                                                    <span>
-                                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M8.39996 3.59989C9.35474 3.59989 10.2704 3.97918 10.9455 4.65431C11.6207 5.32944 12 6.24512 12 7.1999V11.3999H9.59996V7.1999C9.59996 6.88164 9.47353 6.57642 9.24849 6.35137C9.02344 6.12633 8.71822 5.9999 8.39996 5.9999C8.0817 5.9999 7.77647 6.12633 7.55143 6.35137C7.32639 6.57642 7.19996 6.88164 7.19996 7.1999V11.3999H4.79995V7.1999C4.79995 6.24512 5.17924 5.32944 5.85437 4.65431C6.5295 3.97918 7.44518 3.59989 8.39996 3.59989Z" fill="#141414"></path>
-                                                            <path d="M2.4 4.19951H0V11.3995H2.4V4.19951Z" fill="#141414"></path>
-                                                            <path d="M1.2 2.4C1.86274 2.4 2.4 1.86274 2.4 1.2C2.4 0.537259 1.86274 0 1.2 0C0.537259 0 0 0.537259 0 1.2C0 1.86274 0.537259 2.4 1.2 2.4Z" fill="currentcolor"></path>
-                                                        </svg>
-                                                    </span>
-                                                </a>
-                                            </div>
+                                            <p class="small">Founded JZ&D in 2020 with extensive knowledge in corporate alignment and business affairs.</p>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- Humza - Operations Manager -->
                                 <div class="col-xl-4 col-lg-4 col-md-6">
                                     <div class="dgm-team-item mb-40 tp_fade_anim" data-delay=".4">
-                                        <div class="dgm-team-thumb tp--hover-item p-relative">
-                                            <a href="#">
-                                                <div class="tp--hover-img">
-                                                    <img src="images/humza.jpg" alt="Humza" onerror="this.src='images/team-2.jpg'">
-                                                </div>
-                                            </a>
+                                        <div class="team-avatar-placeholder">
+                                            <div class="avatar-initials">HZ</div>
                                         </div>
                                         <div class="dgm-team-content">
-                                            <h4 class="dgm-team-title-sm"><a class="tp-line-black" href="#">Humza</a></h4>
+                                            <h4 class="dgm-team-title-sm">Humza</h4>
                                             <span class="text-primary fw-bold">Operations Manager</span>
                                             <p class="team-contact mt-2">📞 068 051 9853</p>
-                                            <p class="small">Oversees warehousing, distribution, and logistics operations. Ensures timely delivery and quality control across all client projects.</p>
-                                            <div class="dgm-team-social">
-                                                <a href="#">
-                                                    <span>
-                                                        <svg width="7" height="13" viewBox="0 0 7 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M7 0H5.09091C4.24704 0 3.43773 0.335226 2.84102 0.931933C2.24432 1.52864 1.90909 2.33795 1.90909 3.18182V5.09091H0V7.63636H1.90909V12.7273H4.45455V7.63636H6.36364L7 5.09091H4.45455V3.18182C4.45455 3.01304 4.52159 2.85118 4.64093 2.73184C4.76027 2.6125 4.92213 2.54545 5.09091 2.54545H7V0Z" fill="currentcolor"></path>
-                                                        </svg>
-                                                    </span>
-                                                </a>
-                                                <a href="#">
-                                                    <span>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                                                            <path d="M9.4507 0.5H11.2908L7.27076 5.15949L12 11.5H8.29704L5.39675 7.65451L2.07815 11.5H0.236963L4.53678 6.51615L0 0.5H3.79697L6.41858 4.01492L9.4507 0.5ZM8.8049 10.3831H9.8245L3.24294 1.55826H2.1488L8.8049 10.3831Z" fill="currentcolor"></path>
-                                                        </svg>
-                                                    </span>
-                                                </a>
-                                                <a href="#">
-                                                    <span>
-                                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M8.39996 3.59989C9.35474 3.59989 10.2704 3.97918 10.9455 4.65431C11.6207 5.32944 12 6.24512 12 7.1999V11.3999H9.59996V7.1999C9.59996 6.88164 9.47353 6.57642 9.24849 6.35137C9.02344 6.12633 8.71822 5.9999 8.39996 5.9999C8.0817 5.9999 7.77647 6.12633 7.55143 6.35137C7.32639 6.57642 7.19996 6.88164 7.19996 7.1999V11.3999H4.79995V7.1999C4.79995 6.24512 5.17924 5.32944 5.85437 4.65431C6.5295 3.97918 7.44518 3.59989 8.39996 3.59989Z" fill="#141414"></path>
-                                                            <path d="M2.4 4.19951H0V11.3995H2.4V4.19951Z" fill="#141414"></path>
-                                                            <path d="M1.2 2.4C1.86274 2.4 2.4 1.86274 2.4 1.2C2.4 0.537259 1.86274 0 1.2 0C0.537259 0 0 0.537259 0 1.2C0 1.86274 0.537259 2.4 1.2 2.4Z" fill="currentcolor"></path>
-                                                        </svg>
-                                                    </span>
-                                                </a>
-                                            </div>
+                                            <p class="small">Oversees warehousing, distribution, and logistics operations.</p>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Team Experience Note (as a team member card) -->
+                                <!-- Team Experience Note -->
                                 <div class="col-xl-4 col-lg-4 col-md-12">
                                     <div class="dgm-team-item mb-40 tp_fade_anim bg-light p-4" data-delay=".5">
                                         <div class="text-center">
@@ -949,20 +885,12 @@
                                                 <span class="display-2 text-primary">35+</span>
                                             </div>
                                             <h4 class="mb-3">Years of Experience</h4>
-                                            <p class="mb-3">Our management have designed and implemented warehousing and distribution services for worldwide organizations including:</p>
+                                            <p class="mb-3">Serving worldwide organizations including:</p>
                                             <div class="row g-2">
-                                                <div class="col-6">
-                                                    <span class="badge bg-primary text-white p-2 w-100">Kuehne + Nagel</span>
-                                                </div>
-                                                <div class="col-6">
-                                                    <span class="badge bg-primary text-white p-2 w-100">BMW</span>
-                                                </div>
-                                                <div class="col-6">
-                                                    <span class="badge bg-primary text-white p-2 w-100">Easy Way Crane</span>
-                                                </div>
-                                                <div class="col-6">
-                                                    <span class="badge bg-primary text-white p-2 w-100">Mastercard</span>
-                                                </div>
+                                                <div class="col-6"><span class="badge bg-primary text-white p-2 w-100">Kuehne + Nagel</span></div>
+                                                <div class="col-6"><span class="badge bg-primary text-white p-2 w-100">BMW</span></div>
+                                                <div class="col-6"><span class="badge bg-primary text-white p-2 w-100">Easy Way Crane</span></div>
+                                                <div class="col-6"><span class="badge bg-primary text-white p-2 w-100">Mastercard</span></div>
                                             </div>
                                         </div>
                                     </div>
