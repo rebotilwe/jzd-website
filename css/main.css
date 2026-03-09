@@ -49046,3 +49046,149 @@ h1, h2, h3, h4, h5, h6,
 .black-bg-5 .dgm-service-content-right p {
     color: #f0f0f0; /* Light gray - still readable but softer */
 }
+/* ===== TEXT VISIBILITY FIXES ===== */
+
+/* Fix dark text on dark background in experience card */
+.experience-card {
+    background: #ffffff !important;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    margin: 30px 0;
+}
+
+.experience-number {
+    font-size: 72px;
+    font-weight: 700;
+    color: var(--jzd-cyan);
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.experience-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--jzd-navy);
+    margin-bottom: 0;
+}
+
+.experience-text {
+    color: #555555 !important;  /* Dark gray for readability */
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+/* Fix client badges */
+.client-badge {
+    background: var(--jzd-offwhite);
+    color: var(--jzd-navy) !important;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    display: inline-block;
+    margin: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 1px solid #e0e0e0;
+}
+
+/* Fix timeline content text */
+.timeline-content {
+    background: #ffffff !important;
+}
+
+.timeline-text {
+    color: #555555 !important;  /* Dark gray for readability */
+}
+
+/* Fix value cards text */
+.value-description {
+    color: #555555 !important;
+}
+
+/* Fix stat items */
+.stat-item {
+    background: #ffffff !important;
+}
+
+.stat-label {
+    color: var(--jzd-navy) !important;
+}
+
+/* Fix why choose us items */
+.dgm-why-item h5 {
+    color: var(--jzd-navy) !important;
+}
+
+/* Fix any paragraph text in dark sections */
+.black-bg-5 p,
+.dgm-footer-widget-paragraph p,
+.tp-copyright-2-left p {
+    color: rgba(255,255,255,0.9) !important;  /* White text for dark backgrounds */
+}
+
+/* Fix contact info in footer */
+.dgm-footer-widget-paragraph.color-style p {
+    color: rgba(255,255,255,0.9) !important;
+}
+
+.dgm-footer-widget-paragraph.color-style strong {
+    color: var(--jzd-cyan) !important;
+}
+
+/* Fix quick links in footer */
+.dgm-footer-widget-menu ul li a {
+    color: rgba(255,255,255,0.8) !important;
+}
+
+.dgm-footer-widget-menu ul li a:hover {
+    color: var(--jzd-cyan) !important;
+}
+
+/* Fix footer widget titles */
+.dgm-footer-widget-title {
+    color: #ffffff !important;
+}
+
+/* Ensure all service text is visible after background change */
+.grey-bg-2 .dgm-service-content-right p {
+    color: #444444 !important;
+}
+
+.grey-bg-2 .dgm-service-title-sm a {
+    color: var(--jzd-navy) !important;
+}
+
+.grey-bg-2 .dgm-service-content-left span {
+    color: var(--jzd-cyan) !important;
+    opacity: 0.8;
+}
+
+/* Fix founder section text */
+.founder-section p {
+    color: #555555 !important;
+}
+
+/* Fix mission section text (keep white on colored background) */
+.mission-section .mission-text {
+    color: rgba(255,255,255,0.95) !important;
+}
+
+/* Fix CTA section text */
+.cta-section p {
+    color: rgba(255,255,255,0.9) !important;
+}
+
+/* Fix any remaining dark text issues */
+.lead {
+    color: #444444 !important;
+}
+
+.tp-section-title-grotesk {
+    color: var(--jzd-navy) !important;
+}
+
+.tp-section-subtitle.subtitle-black {
+    color: var(--jzd-cyan) !important;
+    font-weight: 600;
+}
